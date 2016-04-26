@@ -1,15 +1,18 @@
 class StudentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
-  end
+    @students = Student.where("user_id=?", current_user.id)
 
+  end
+ #
   # GET /students/1
   # GET /students/1.json
   def show
+     @users = User.all
   end
 
   # GET /students/new

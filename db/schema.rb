@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160425011257) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "dir"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false

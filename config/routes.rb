@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'map/showmap'
+
   devise_for :users
   resources :students
   resources :users
