@@ -15,9 +15,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-
-
-	function initMap() {
+function initMap() {
 		var directionsService = new google.maps.DirectionsService;
 		var directionsDisplay = new google.maps.DirectionsRenderer;
 
@@ -25,20 +23,18 @@
 			center: {lat: 10.983812, lng: -74.818017},
 			zoom: 15
 		});
-		directionsDisplay.setMap(map);
-
+		directionsDisplay.setMap(map); 
+		
 		
 		$( document ).ready( function(){
-			$('#btn').click(function(){
-				/*window.alert($("#end").text());
-				window.alert($("#star").text());*/
+			
+			$('.btn-default').click(function(){
+				
 				calculateAndDisplayRoute(directionsService, directionsDisplay);
+
 			});
-
-
 		} );
-		/*document.getElementById('btn').addEventListener('click', onChangeHandler);*/
-
+			
 	}
 
 	function calculateAndDisplayRoute(directionsService, directionsDisplay) {
@@ -54,4 +50,5 @@
 				window.alert('Directions request failed due to ' + status);
 			}
 		});
+		
 	}

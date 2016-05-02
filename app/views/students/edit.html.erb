@@ -1,6 +1,7 @@
 <h1>Editing Student</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @student %> |
-<%= link_to 'Back', students_path %>
+<ul class= "pager" >
+<li><%= link_to 'Show', @student %></li>
+<li><%= link_to 'Back', students_path %></li>
+</ul>
