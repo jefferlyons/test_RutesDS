@@ -19,7 +19,10 @@ td {
         margin: auto;
         }
 .conteiner {
-	border: 3px solid;
+	border-radius: 16px 16px;
+        border-color: #8E8787;
+        border-style: solid;
+        border-width: 3px;
 }
 
 .mysiderbar {
