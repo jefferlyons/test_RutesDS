@@ -2,6 +2,8 @@
 <p id="alert"><%= alert %></p>
 	<div class ="col-sm-4">
 	<div class="conteiner"> 
+	<h3> Estudiante</h3>
+
 			<p>
 				<strong>Nombre:</strong>
 				<%= @student.name %>
@@ -21,14 +23,40 @@
 				<strong>Casa dir:</strong>
 				<p id="end"> <%= @users.find_by_id(@student.user_id).dir %> </p> 
 			</p>
-			<button  class="btn btn-default">Ver en el mapa</button>
+			<button  class="btn btn-default" id="btn">Ver en el mapa</button>
+			<button class="btn btn-default" id="btndriver"> Ver datos Condutor</button>
 		</div> 
 
 	</div>
 	<div class="col-sm-8"><div id="map"></div></div>
-	<div class="col-sm-4" id="driver"> <p>hola</p> </div>
+	<div class="col-sm-4" id="driver">  
+		<!-- @rute = @student_drivers.find_by_student_id(@student.id) -->
+		<% if @student_drivers.exists?(:student_id => @student.id) %>
+		<% @rute = @student_drivers.find_by_student_id(@student.id) %> 
+		<% driver = @drivers.find_by_id(@rute.driver_id) %>
+		<div class="conteiner"> 
+			<h3>Conductor</h3>
+			<p>
+				<strong>Name:</strong>
+				<%=  driver.name %>
+			</p>
+
+			<p>
+				<strong>Phone:</strong>
+				<%= driver.phone %>
+			</p>
+
+			<p>
+				<strong>Nit:</strong>
+				<%= driver.nit %>
+			</p>
 
 
+		</div>
+		
+		<% end %>
+
+	</div>
 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4924wlraUwzko-Ta0YJKCe0hW5wLiP6E&callback=initMap"
 	async defer></script> 

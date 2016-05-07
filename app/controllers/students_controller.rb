@@ -16,12 +16,15 @@ class StudentsController < ApplicationController
      @users = User.all
      @schools = School.all
      @drivers = Driver.all
+     @student_drivers = StudentDriver.all
+     
   end
 
   # GET /students/new
   def new
     @student = Student.new
-    @school = School.all
+    @schools = School.all
+    @drivers = Driver.all
   end
 
   # GET /students/1/edit

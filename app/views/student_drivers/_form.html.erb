@@ -1,0 +1,25 @@
+<%= form_for(@student_driver) do |f| %>
+  <% if @student_driver.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student_driver.errors.count, "error") %> prohibited this student_driver from being saved:</h2>
+
+      <ul>
+      <% @student_driver.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :student_id %><br>
+    <%= f.select(:student_id, options_for_select(@students.collect{ |s| [s.name, s.id] }) ) %>
+  </div>
+  <div class="field">
+    <%= f.label :driver_id %><br>
+    <%= f.select(:driver_id, options_for_select(@drivers.collect{ |s| [s.name, s.id] }) )%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

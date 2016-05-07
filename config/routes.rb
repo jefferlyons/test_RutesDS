@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :student_drivers
   resources :drivers
   resources :schools
   get 'home/index'

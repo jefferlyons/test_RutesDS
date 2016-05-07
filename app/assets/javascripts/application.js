@@ -28,10 +28,13 @@ function initMap() {
 		
 		$( document ).ready( function(){
 			
-			$('.btn-default').click(function(){
+			$('#btn').click(function(){
 				
 				calculateAndDisplayRoute(directionsService, directionsDisplay);
 
+			});
+			$('#btndriver').click(function(){
+				$('#driver').toggle();
 			});
 		} );
 			

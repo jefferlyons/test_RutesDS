@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @students.find_by_id(@student_driver.student_id).name  %>
+</p>
+
+<p>
+  <strong>Driver:</strong>
+  <%=   @drivers.find_by_id(@student_driver.driver_id).name      %>
+</p>
+
+<%= link_to 'Edit', edit_student_driver_path(@student_driver) %> |
+<%= link_to 'Back', student_drivers_path %>
