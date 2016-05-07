@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Schools</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Adress</th>
+      <th>Cell</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= school.name %></td>
+        <td><%= school.adress %></td>
+        <td><%= school.cell %></td>
+        <td><%= school.email %></td>
+        <td> 
+          <div class="btn btn-group">  
+            <%= link_to 'Show', school , class:"btn btn-default btn-md" %>
+            <%= link_to 'Edit', edit_school_path(school) , class:"btn btn-default btn-md" %>
+            <%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-default btn-md"%>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New School', new_school_path , class:"btn btn-default"%>

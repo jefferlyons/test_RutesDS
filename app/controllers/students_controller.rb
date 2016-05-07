@@ -14,15 +14,20 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
      @users = User.all
+     @schools = School.all
+     @drivers = Driver.all
   end
 
   # GET /students/new
   def new
     @student = Student.new
+    @school = School.all
   end
 
   # GET /students/1/edit
   def edit
+    @users = User.all
+    @schools = School.all
   end
 
   # POST /students
@@ -73,6 +78,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:name, :dir_school,:user_id)
+      params.require(:student).permit(:name, :school_id,:user_id)
     end
 end

@@ -57,14 +57,20 @@
     <div class="col-sm-2 sidenav">
       <ul class="mysiderbar">
        <% if user_signed_in? %>
-        <li><%= link_to "Students", students_path  %></li>
-        <li><%= link_to "Editar Perfil", edit_user_path(current_user) %></li>
-        <% end %> 
-      </ul> 
+       <li><%= link_to "Students", students_path  %></li>
+       <li><%= link_to "Editar Perfil", edit_user_path(current_user) %></li>
+         <% if current_user.admin?  %>
+         <li><%= link_to "Schools", schools_path  %></li>
+         <li><%= link_to "Drives", drivers_path  %></li>
+         <% end %>
+       <% end %> 
+     </ul> 
         
     </div>
     <div class="col-sm-8 text-left"> 
-       <%= yield %>
+       <div class="well">
+         <%= yield %>
+       </div>
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">

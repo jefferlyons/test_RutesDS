@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Drivers</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Nit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @drivers.each do |driver| %>
+      <tr>
+        <td><%= driver.name %></td>
+        <td><%= driver.phone %></td>
+        <td><%= driver.nit %></td>
+        <td> <div class="btn btn-group">
+          <%= link_to 'Show', driver , class:"btn btn-default btn-md"%>
+          <%= link_to 'Edit', edit_driver_path(driver) , class:"btn btn-default btn-md" %>
+          <%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-default btn-md" %>
+        </div>
+      </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Driver', new_driver_path , class:"btn btn-default"%>

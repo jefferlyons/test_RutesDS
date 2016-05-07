@@ -11,16 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425011257) do
+ActiveRecord::Schema.define(version: 20160507000250) do
+
+  create_table "drivers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.integer  "nit",        limit: 8
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string   "name"
+    t.string   "adress"
+    t.string   "cell"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "students", force: :cascade do |t|
     t.string   "name"
-    t.string   "dir_school"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.integer  "school_id"
   end
 
+  add_index "students", ["school_id"], name: "index_students_on_school_id"
   add_index "students", ["user_id"], name: "index_students_on_user_id"
 
   create_table "users", force: :cascade do |t|
@@ -39,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160425011257) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
