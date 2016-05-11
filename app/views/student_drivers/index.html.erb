@@ -2,7 +2,7 @@
 
 <h1>Listing Student Drivers</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Student</th>
@@ -14,11 +14,15 @@
   <tbody>
     <% @student_drivers.each do |student_driver| %>
       <tr>
-        <td><%= student_driver.student %></td>
-        <td><%= student_driver.driver %></td>
-        <td><%= link_to 'Show', student_driver %></td>
-        <td><%= link_to 'Edit', edit_student_driver_path(student_driver) %></td>
-        <td><%= link_to 'Destroy', student_driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= @students.find_by_id(student_driver.student_id).name    %></td>
+        <td><%= @drivers.find_by_id(student_driver.driver).name %></td>
+        <td>
+        <div class="btn btn-group">
+        <%= link_to 'Show', student_driver , class:"btn btn-default" %>
+        <%= link_to 'Edit', edit_student_driver_path(student_driver), class:"btn btn-default" %>
+  <%= link_to 'Destroy', student_driver, method: :delete, data: { confirm: 'Are you sure?' } , class:"btn btn-default" %>  
+        </div>
+        </td>
       </tr>
     <% end %>
   </tbody>

@@ -5,6 +5,8 @@ class StudentDriversController < ApplicationController
   # GET /student_drivers.json
   def index
     @student_drivers = StudentDriver.all
+    @drivers = Driver.all
+    @students = Student.all
   end
 
   # GET /student_drivers/1
