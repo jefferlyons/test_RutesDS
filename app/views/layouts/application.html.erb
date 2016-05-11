@@ -45,7 +45,7 @@
           </li>
           <% else %>
           <li><%= link_to "<span class='glyphicon glyphicon-log-in'></span>Login".html_safe,  new_user_session_path %></li>
-          <li><%= link_to "Sing up", new_user_registration_path %></li>
+          <li><%= link_to "Sign up", new_user_registration_path , class:"btn btn-primary"%></li>
           <% end -%>
       </ul>
     </div>
@@ -76,10 +76,10 @@
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
-        <p>ADS</p>
+        
       </div>
       <div class="well">
-        <p>ADS</p>
+        
       </div>
     </div>
   </div>

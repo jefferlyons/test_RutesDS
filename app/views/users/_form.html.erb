@@ -24,12 +24,14 @@
     <%= f.number_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :dir %><br>
+    <%= f.label :adress %><br>
     <%= f.text_field :dir %>
   </div>
    <div class="field">
+   <% if current_user.admin?  %>
     <%= f.label :admin %><br>
     <%= f.check_box :admin %>
+    <%end%>
   </div>
   <div class="actions">
     <%= f.submit %>
