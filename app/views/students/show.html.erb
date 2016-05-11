@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <p id="alert"><%= alert %></p>
 	<div class ="col-sm-4">
-	<div class="conteiner"> 
+	<div class="container"> 
 	<h3> Estudiante</h3>
 
 			<p>
@@ -24,7 +24,8 @@
 				<p id="end"> <%= @users.find_by_id(@student.user_id).dir %> </p> 
 			</p>
 			<button  class="btn btn-default" id="btn">Ver en el mapa</button>
-			<button class="btn btn-default" id="btndriver"> Ver datos Condutor</button>
+			<p><button class="btn btn-default" id="btndriver"> Ver datos Conductor</button></p>
+			
 		</div> 
 
 	</div>
@@ -34,7 +35,7 @@
 		<% if @student_drivers.exists?(:student_id => @student.id) %>
 		<% @rute = @student_drivers.find_by_student_id(@student.id) %> 
 		<% driver = @drivers.find_by_id(@rute.driver_id) %>
-		<div class="conteiner"> 
+		<div class="container"> 
 			<h3>Conductor</h3>
 			<p>
 				<strong>Name:</strong>

@@ -45,7 +45,7 @@
           </li>
           <% else %>
           <li><%= link_to "<span class='glyphicon glyphicon-log-in'></span>Login".html_safe,  new_user_session_path %></li>
-          <li><%= link_to "Sing up", new_user_registration_path %></li>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
           <% end -%>
       </ul>
     </div>
@@ -61,9 +61,9 @@
        <li><%= link_to "Editar Perfil", edit_user_path(current_user) %></li>
          <% if current_user.admin?  %>
          <li><%= link_to "Schools", schools_path  %></li>
-         <li><%= link_to "Drives", drivers_path  %></li>
+         <li><%= link_to "Drivers", drivers_path  %></li>
          <li><%= link_to "Users", users_path  %></li>
-         <li><%= link_to "Rutes", student_drivers_path  %></li>
+         <li><%= link_to "Routes", student_drivers_path  %></li>
          <% end %>
        <% end %> 
      </ul> 
